@@ -11,3 +11,17 @@
 *= require mobile
 *= require_self
 */
+
+.header {
+  background-color:#8000ff;
+  height:80px;
+  text-align:center;
+  font-size:60px;
+  color:#ffffff;
+  font-weight:bold;
+}
+
+.footer {
+  background-color:#8000ff;
+  color:#c0c0c0;
+}

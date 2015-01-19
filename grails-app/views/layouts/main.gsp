@@ -13,13 +13,14 @@
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
+		<asset:stylesheet src="apis.min.css"/>
 		<g:layoutHead/>
 	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+	<body class="container">
+		<div class="row header">Mega Blog</div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		<div class="row footer" role="contentinfo">&copy; 2015 M Zivanic and AK Sommerville</div>
 	</body>
+	<asset:javascript src="application.js"/>
+  <asset:javascript src="apis.min.js"/>
 </html>
