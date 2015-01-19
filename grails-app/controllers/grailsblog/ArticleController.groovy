@@ -1,6 +1,8 @@
 package grailsblog
 
 class ArticleController {
-
-    def scaffold = true;
+    
+    def index() {
+      request["yabba"]="dabba";
+    }
 }
