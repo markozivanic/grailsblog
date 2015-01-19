@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html><head>
   <meta name="layout" content="main.gsp"/>
-  <title>Articles</title>
+  <title>Comments</title>
 </head>
 	<body>
- 		 Articles here.
+  		Save is here.
 	</body>
 </html>
