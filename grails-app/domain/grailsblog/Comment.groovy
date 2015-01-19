@@ -1,7 +1,14 @@
 package grailsblog
 
 class Comment {
-
-    static constraints = {
+	
+	String comment;
+	User user;
+	Article article;
+	
+	static constraints = {
+		comment(blank:false);
+		user(blank:false);
+		article(blank:false);
     }
 }

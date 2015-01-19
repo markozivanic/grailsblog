@@ -8,13 +8,21 @@ import spock.lang.Specification
  */
 @TestFor(Comment)
 class CommentSpec extends Specification {
-
+	Comment comment;
+	
     def setup() {
+	 comment = new Comment();
     }
 
     def cleanup() {
     }
 
     void "test something"() {
+		given:
+			comment.name = "I love this blog";
+		when:
+			comment.name = "I access this blog";
+		then:
+			comment.name.contains  "I see nice topics";
     }
 }
