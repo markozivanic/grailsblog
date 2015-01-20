@@ -14,7 +14,7 @@ class User {
     static constraints = {
       name(size:1..20,unique:true,blank:false)
       email(email:true,blank:false)
-      password(size:6..20,blank:false)
+      password(size:6..20,blank:false,password:true)
     }
     
     String toString() { name; }

@@ -25,3 +25,12 @@
   background-color:#8000ff;
   color:#c0c0c0;
 }
+
+.title-header {
+  display:inline;
+}
+
+.login-info {
+  display:inline;
+  font-size:20px;
+}

@@ -17,10 +17,24 @@
 		<g:layoutHead/>
 	</head>
 	<body class="container">
-		<div class="row header">Mega Blog</div>
+ 
+		<div class="row header">
+    <div class="title-header">Mega Blog</div>
+    <div class="login-info">
+      <g:if test="${session.user}">
+        Logged in as ${session.user.name}.
+        <a href="/grailsblog/user/logout">Log out</a>
+      </g:if>
+      <g:else>
+        <a href="/grailsblog/user/login">Log in</a>
+      </g:else>
+    </div>
+  </div>
+  
 		<g:layoutBody/>
 		<div class="row footer" role="contentinfo">&copy; 2015 M Zivanic and AK Sommerville</div>
-	</body>
+
+  </body>
 	<asset:javascript src="application.js"/>
   <asset:javascript src="apis.min.js"/>
 </html>
