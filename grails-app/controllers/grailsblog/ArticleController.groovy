@@ -8,17 +8,21 @@ class ArticleController {
     }
     
     def newArticle() {
-      request["user"]=User.get(1);//TODO
+      if (!session.user) {
+        redirect(controller:"user",action:"login");
+        return;
+      }
     }
     
     def save() {
-      def user=User.get(1);//TODO
-
-      if (null==user) {
-        redirect(action:"saveFailed");
+      if (!session.user) {
+        redirect(controller:"user",action:"login");
         return;
       }
-      def article=new Article(user:user,title:params.title,content:params.content,creationTime:new Date());
+
+      def article=new Article(
+        user:session.user,title:params.title,content:params.content,creationTime:new Date()
+      );
       if (null==article.save()) {
         redirect(action:"saveFailed");
       } else {
@@ -30,6 +34,20 @@ class ArticleController {
     }
     
     def read() {
-      request["article"]=Article.get(params.id);
+      Article article=Article.get(params.id);
+      request.article=article;
+      if (session.user&&(session.user.id==article.user.id)) {
+        flash.article=article;
+        redirect(action:"edit");
+      } else {
+      }
+    }
+    
+    def edit() {
+      if (!flash.article) {
+        redirect(action:"index");
+        return;
+      }
+      request.article=flash.article;
     }
 }
