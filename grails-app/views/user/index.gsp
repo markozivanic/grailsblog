@@ -4,17 +4,13 @@
   <title>Users</title>
 </head>
 	<body>
-  			<g:form action="save" >
-    			<label for="name">Name</label>
-    			<g:textField name="name" value="${user.name }"/>
-    		<br/>
-    			<label for="email">Email</label>
-    			<g:textField name="email" value="${user.email}"/>
-    		<br/>
-    			<label for="password">Password:</label>
-    			<g:textField name="password" value="${user.password}"/>
-    		<br/>
-    			<g:submitButton name="create" value="Save" />
-			</g:form>
+	${users.size} users.<br/>
+	
+	<form action="newUser" method="GET">
+		<input type="SUBMIT" value="New User"/>
+	</form>
+	<g:each in="${users }" var="user">
+		${user }<br/>
+		</g:each>
 	</body>
 </html>

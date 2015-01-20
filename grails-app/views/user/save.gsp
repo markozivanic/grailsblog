@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html><head>
   <meta name="layout" content="main.gsp"/>
-  <title>Comments</title>
+  <title>Users</title>
 </head>
 	<body>
-  		Save is here.
+	 <pre>${message}</pre>
 	</body>
 </html>
