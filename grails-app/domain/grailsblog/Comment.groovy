@@ -13,7 +13,7 @@ class Comment {
     }
     
     String toString() { 
-      if (comment.length()) {
+      if (comment.length()>20) {
         comment.substring(0,20)+"...";
       } else if (comment.length()<1) {
         return "(Empty comment)";

@@ -2,8 +2,18 @@
 <html><head>
   <meta name="layout" content="main.gsp"/>
   <title>Comments</title>
-</head>
-	<body>
-  		Comments here.
-	</body>
-</html>
+</head><body>
+ 
+    <form action="/grailsblog/comment/newComment" method="GET">
+      <input type="submit" value="New Comment"/>
+    </form>
+  		
+    <ul>
+      <g:each in="${comments}" var="comment">
+        <li>
+          <a href="/grailsblog/comment/read/${comment.id}">${comment}</a>
+        </li>
+      </g:each>
+    </ul>
+    
+</body></html>
