@@ -13,6 +13,6 @@ class ArticleController {
       def user=User.get(1);//TODO
       def article=new Article(user:user,title:params.title,content:params.content);
       article.save();
-      redirect("index");
+      redirect(action:"index");
     }
 }

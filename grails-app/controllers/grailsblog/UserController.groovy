@@ -13,6 +13,13 @@ class UserController {
 	def save(){
 		def user=new User(name:params.name, email:params.email,password:params.password);
 		user.save();
-		redirect(action:index);
+		if(!user.save()){
+			redirect(action:"savefail");
+			return;
+		}
+		redirect(action:"index");
+	}
+	def savefail(){
+		
 	}
 }

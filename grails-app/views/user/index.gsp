@@ -10,7 +10,7 @@
 		<input type="SUBMIT" value="New User"/>
 	</form>
 	<g:each in="${users }" var="user">
-		${user }<br/>
+		${user}<br/>
 		</g:each>
 	</body>
 </html>
