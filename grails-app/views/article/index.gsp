@@ -5,5 +5,6 @@
 </head>
 	<body>
  		 Articles here.
+    ${message}
 	</body>
 </html>

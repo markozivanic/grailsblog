@@ -16,4 +16,6 @@ class User {
       email(email:true,blank:false)
       password(size:6..20,blank:false)
     }
+    
+    String toString() { name; }
 }

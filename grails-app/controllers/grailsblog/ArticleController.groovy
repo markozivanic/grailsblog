@@ -3,6 +3,6 @@ package grailsblog
 class ArticleController {
     
     def index() {
-      request["yabba"]="dabba";
+      request["message"]=Article.get(1);
     }
 }

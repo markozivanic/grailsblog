@@ -15,4 +15,8 @@ class Article {
     static mapping={
       stuff column:'stuff', type:'text'
     }
+    
+    String toString() {
+      return title;
+    }
 }
