@@ -5,6 +5,7 @@ class Article {
     User user;
     String title;
     String content;
+    Date creationTime;
 
     static constraints = {
       title()
