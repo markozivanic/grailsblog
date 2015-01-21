@@ -14,7 +14,7 @@ class Article {
     }
     
     static mapping={
-      stuff column:'stuff', type:'text'
+      content column:'content', type:'text'
     }
     
     String toString() {

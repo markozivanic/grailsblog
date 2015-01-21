@@ -7,6 +7,8 @@
     <form action="/grailsblog/comment/newComment" method="GET">
       <input type="submit" value="New Comment"/>
     </form>
+    
+    <p>${comments.size} comments</p>
   		
     <ul>
       <g:each in="${comments}" var="comment">
