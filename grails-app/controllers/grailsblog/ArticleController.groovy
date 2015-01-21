@@ -40,6 +40,7 @@ class ArticleController {
         flash.article=article;
         redirect(action:"edit");
       } else {
+        request.comments=Comment.findByArticle(article);
       }
     }
     

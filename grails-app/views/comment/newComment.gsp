@@ -4,21 +4,13 @@
   <title>Add Comment</title>
 </head><body>
 
+  <div class="comment-description">
+    Commenting on article '${article}'.
+  </div>
+
   <form action="/grailsblog/comment/save" method="POST">
-    <label for="user">User</label>
-    <select name="userId">
-      <g:each in="${users}" var="user">
-        <option value="${user.id}">${user}</option>
-      </g:each>
-    </select>
-    <br/>
-    <label for="article">Article</label>
-    <select name="articleId">
-      <g:each in="${articles}" var="article">
-        <option value="${article.id}">${article}</option>
-      </g:each>
-    </select>
-    <br/>
+    <input type="hidden" name="userId" value="${user.id}"/>
+    <input type="hidden" name="articleId" value="${article.id}"/>
     <label for="comment">Comment</label>
     <textarea name="comment"></textarea>
     <br/>

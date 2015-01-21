@@ -7,8 +7,17 @@ class CommentController {
   }
   
   def newComment() {
-    request["articles"]=Article.list();
-    request["users"]=User.list();
+    if (!session.user) {
+      redirect(controller:"user",action:"login");
+      return;
+    }
+    Article article=Article.get(params.articleId);
+    if (!article) {
+      redirect(controller:"article",action:"index");
+      return;
+    }
+    request.article=article;
+    request.user=session.user;
   }
   
   def save() {
@@ -18,7 +27,7 @@ class CommentController {
     if (!comment.save()) {
       redirect(action:"saveFailed");
     } else {
-      redirect(action:"index");
+      redirect(controller:"article",action:"read",params:[id:params.articleId]);
     }
   }
   
