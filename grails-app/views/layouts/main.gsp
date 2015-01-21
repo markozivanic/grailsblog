@@ -24,6 +24,6 @@
 		<div class="row footer" role="contentinfo">&copy; 2015 M Zivanic and AK Sommerville</div>
 
   </body>
+   		<asset:javascript src="apis.min.js"/>
 	 <asset:javascript src="application.js"/>
-  <asset:javascript src="apis.min.js"/>
 </html>
