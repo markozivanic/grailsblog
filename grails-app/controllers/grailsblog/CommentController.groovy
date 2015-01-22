@@ -8,6 +8,9 @@ class CommentController {
   
   def newComment() {
     if (!session.user) {
+      session.redirectController="comment";
+      session.redirectAction="newComment";
+      session.redirectParams=["articleId":params.articleId];
       redirect(controller:"user",action:"login");
       return;
     }
@@ -21,9 +24,12 @@ class CommentController {
   }
   
   def save() {
-    def user=User.get(params.userId);
+    if (!session.user) {
+      redirect(action:"saveFailed");
+      return;
+    }
     def article=Article.get(params.articleId);
-    def comment=new Comment(user:user,article:article,comment:params.comment);
+    def comment=new Comment(user:session.user,article:article,comment:params.comment);
     if (!comment.save()) {
       redirect(action:"saveFailed");
     } else {

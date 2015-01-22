@@ -29,7 +29,7 @@ class UserController {
   def validate() {
     String username=params.username;
     String password=params.password;
-    User user=User.findByName(username);
+    User user=User.findByNameIlike(username);
     if (!user) {
       redirect(action:"loginFailed");
       return;
@@ -39,7 +39,11 @@ class UserController {
       return;
     }
     session.user=user;
-    redirect(controller:"article",action:"index");
+    if (session.redirectController&&session.redirectAction) {
+      redirect(controller:session.redirectController,action:session.redirectAction,params:session.redirectParams);
+    } else {
+      redirect(controller:"article",action:"index");
+    }
   }
   
   def loginFailed() {

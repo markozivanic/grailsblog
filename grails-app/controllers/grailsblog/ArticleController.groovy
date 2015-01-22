@@ -9,6 +9,9 @@ class ArticleController {
     
     def newArticle() {
       if (!session.user) {
+        session.redirectController="article";
+        session.redirectAction="newArticle";
+        session.redirectParams=[];
         redirect(controller:"user",action:"login");
         return;
       }
@@ -16,10 +19,9 @@ class ArticleController {
     
     def save() {
       if (!session.user) {
-        redirect(controller:"user",action:"login");
+        redirect(action:"saveFailed");
         return;
       }
-
       def article=new Article(
         user:session.user,title:params.title,content:params.content,creationTime:new Date()
       );
@@ -40,7 +42,7 @@ class ArticleController {
         flash.article=article;
         redirect(action:"edit");
       } else {
-        request.comments=Comment.findByArticle(article);
+        request.comments=Comment.findAllByArticle(article);
       }
     }
     
