@@ -4,7 +4,8 @@ class Comment {
 	
 	String comment;
 	User user;
-	Article article;
+
+	static belongsTo=[article:Article];
 	
 	static constraints = {
 		comment(blank:false);

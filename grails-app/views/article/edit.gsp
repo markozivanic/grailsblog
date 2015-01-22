@@ -4,6 +4,10 @@
   <title>New Article</title>
 </head>
 	<body>
+	  <form action="/grailsblog/article/delete" method="POST">
+	    <input type="hidden" name="articleId" value="${article.id}"/>
+	    <input type="submit" value="DELETE"/>
+	  </form>
 	  <g:form action="save">
 	    <label for="title">Title</label>
 	    <input type="text" name="title" value="${article.title}"/>

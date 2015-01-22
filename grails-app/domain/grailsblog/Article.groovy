@@ -2,10 +2,11 @@ package grailsblog
 
 class Article {
 
-    User user;
     String title;
     String content;
     Date creationTime;
+
+    static belongsTo=[user:User];
 
     static constraints = {
       title()

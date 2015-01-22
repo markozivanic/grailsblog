@@ -54,4 +54,14 @@ class ArticleController {
 	  request.comments=Comment.findAllByArticle(flash.article);
       request.article=flash.article;
     }
+
+    def delete() {
+      Article article=Article.get(params.articleId);
+      if (!article||!session.user) {
+        redirect(action:"deleteFailed");
+        return;
+      }
+      article.delete(flush:true);
+      redirect(action:"index");
+    }
 }
