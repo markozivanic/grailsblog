@@ -61,6 +61,12 @@ class ArticleController {
         redirect(action:"deleteFailed");
         return;
       }
+
+      def comments=Comment.findAllByArticle(article);
+      comments.each { comment ->
+        comment.delete();
+      }
+      
       article.delete(flush:true);
       redirect(action:"index");
     }
