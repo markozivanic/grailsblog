@@ -70,4 +70,17 @@ class ArticleController {
       article.delete(flush:true);
       redirect(action:"index");
     }
+
+    def search() {
+      String q=params.q;
+      if (!q) {
+        redirect(action:"index");
+        return;
+      }
+      request.articles=Article.findAllByContentIlike(
+        "%"+q+"%",
+        [max:10,sort:"creationTime",order:"desc"]
+      );
+      render(view:"index");
+    }
 }

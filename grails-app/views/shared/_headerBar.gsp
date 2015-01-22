@@ -14,4 +14,8 @@
   <div class="btn btn-default col-md-3">
     <a href="/grailsblog/article">Articles</a>
   </div>
+  <form action="/grailsblog/article/search" method="POST" class="search col-md-3">
+    <input type="search" name="q" placeholder="Search articles"/>
+    <input type="submit" value="Search"/>
+  </form>
 </div>
