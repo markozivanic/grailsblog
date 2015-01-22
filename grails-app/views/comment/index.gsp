@@ -13,7 +13,9 @@
     <ul>
       <g:each in="${comments}" var="comment">
         <li>
-          <a href="/grailsblog/comment/read/${comment.id}">${comment}</a>
+          <a href="/grailsblog/comment/read/${comment.id}">${comment}</a> ;
+          ${comment.user} ;
+          ${comment.article}
         </li>
       </g:each>
     </ul>
