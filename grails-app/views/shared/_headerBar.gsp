@@ -9,6 +9,9 @@
     </g:else>
   </div>
   <div class="btn btn-default col-md-3">
+    <a href="/grailsblog/user/newUser">Add new user</a>
+  </div>
+  <div class="btn btn-default col-md-3">
     <a href="/grailsblog/article">Articles</a>
   </div>
 </div>
