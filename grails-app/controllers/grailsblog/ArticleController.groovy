@@ -4,7 +4,7 @@ class ArticleController {
   static scope="singleton";
     
     def index() {
-      request["articles"]=Article.list();
+      request["articles"]=Article.list(max:10,sort:"creationTime",order:"desc");
     }
     
     def newArticle() {

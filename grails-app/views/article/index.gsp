@@ -4,7 +4,6 @@
   <title>Articles</title>
 </head>
 	<body>
-    ${articles.size} articles.<br/>
     
     <form action="/grailsblog/article/newArticle" method="GET">
       <input type="submit" value="New Article"/>
@@ -12,9 +11,14 @@
     
     <ul>
       <g:each in="${articles}" var="article">
-        <li>
-          <a href="/grailsblog/article/read/${article.id}">${article}</a>
-        </li>
+        <li><div class="article panel panel-default">
+          <div class="panel-heading">
+            <a href="/grailsblog/article/read/${article.id}">${article}</a>
+          </div>
+          <div class="panel-body">
+            ${article.creationTime} by ${article.user}
+          </div>
+        </div></li>
       </g:each>
     </ul>
     
