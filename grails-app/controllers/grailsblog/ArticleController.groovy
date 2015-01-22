@@ -51,6 +51,7 @@ class ArticleController {
         redirect(action:"index");
         return;
       }
+	  request.comments=Comment.findAllByArticle(flash.article);
       request.article=flash.article;
     }
 }

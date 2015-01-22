@@ -17,7 +17,7 @@ class UserController {
 			redirect(action:"savefail");
 			return;
 		}
-		redirect(action:"index");
+		redirect(controller:"article", action:"index");
 	}
 	def savefail(){
 		
