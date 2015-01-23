@@ -13,29 +13,30 @@
 */
 
 .header {
-  background-color:#8000ff;
-  height:80px;
-  text-align:center;
-  font-size:60px;
+  background-color:#201080;
   color:#ffffff;
-  font-weight:bold;
+  display:flex;
+  align-items:bottom;
+}
+
+.header > .bottom {
+  display:inline-block;
+  vertical-align:bottom;
+  background-color:#ff0000;
+}
+
+.header a {
+  color:#00ff00;
 }
 
 .footer {
-  background-color:#8000ff;
-  color:#c0c0c0;
 }
 
 .title-header {
-  display:inline;
 }
 
 .login-info {
-  display:inline;
-  font-size:20px;
 }
 
 .search {
-  font-size:16px;
-  color:#000000;
 }

@@ -12,11 +12,11 @@ class UserController {
 	}
 	def save(){
 		def user=new User(name:params.name, email:params.email,password:params.password);
-		user.save();
 		if(!user.save()){
 			redirect(action:"savefail");
 			return;
 		}
+		session.user=user;
 		redirect(controller:"article", action:"index");
 	}
 	def savefail(){
