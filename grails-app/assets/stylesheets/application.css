@@ -12,31 +12,32 @@
 *= require_self
 */
 
-.header {
-  background-color:#201080;
-  color:#ffffff;
-  display:flex;
-  align-items:bottom;
+.headerbar {
+  background-color:#404040;
+  color:#c0c0c0;
 }
 
-.header > .bottom {
-  display:inline-block;
-  vertical-align:bottom;
-  background-color:#ff0000;
+.headerbar > .title {
+  font-size:30px;
+  font-weight:bold;
+  font-family:sans-serif;
 }
 
-.header a {
-  color:#00ff00;
+.headerbar > .login {
+}
+
+.headerbar > .articles {
+}
+
+.headerbar > .search {
+}
+
+.headerbar a {
+  color:#c0c0c0;
+  text-decoration:underline;
 }
 
 .footer {
-}
-
-.title-header {
-}
-
-.login-info {
-}
-
-.search {
+  background-color:#404040;
+  color:#a0a0a0;
 }

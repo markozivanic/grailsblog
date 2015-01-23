@@ -5,7 +5,7 @@
 </head>
 	<body>
 	<div class="row">
-	  <form action="/grailsblog/user/validate">
+	  <form action="/grailsblog/user/validate" method="POST">
 	  <div class="col-sm-5">
 	    <label for="username">User name:</label>
 	    <input  class="form-control input-sm" placeholder="User name..." type="text" name="username"/>
