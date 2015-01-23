@@ -42,7 +42,10 @@ class ArticleController {
         flash.article=article;
         redirect(action:"edit");
       } else {
-        request.comments=Comment.findAllByArticle(article);
+        request.comments=Comment.findAllByArticle(
+          article,
+          [sort:"creationTime",order:"desc"]
+        );
       }
     }
     

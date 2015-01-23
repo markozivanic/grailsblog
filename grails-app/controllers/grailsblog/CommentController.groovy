@@ -29,7 +29,7 @@ class CommentController {
       return;
     }
     def article=Article.get(params.articleId);
-    def comment=new Comment(user:session.user,article:article,comment:params.comment);
+    def comment=new Comment(user:session.user,article:article,comment:params.comment,creationTime:new Date());
     if (!comment.save()) {
       redirect(action:"saveFailed");
     } else {

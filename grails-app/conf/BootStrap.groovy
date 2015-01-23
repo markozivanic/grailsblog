@@ -28,9 +28,9 @@ class BootStrap {
         content:LOREM_IPSUM
       ).save();
       
-      new Comment(user:marko,article:barticle,comment:"B is a useful letter.").save();
-      new Comment(user:linus,article:barticle,comment:"I still prefer L.").save();
-      new Comment(user:andy,article:marticle,comment:"I'm not sure I understand this.").save();
+      new Comment(user:marko,article:barticle,comment:"B is a useful letter.",creationTime:new Date()).save();
+      new Comment(user:linus,article:barticle,comment:"I still prefer L.",creationTime:new Date()).save();
+      new Comment(user:andy,article:marticle,comment:"I'm not sure I understand this.",creationTime:new Date()).save();
       
     }
     def destroy = {

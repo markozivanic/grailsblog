@@ -4,6 +4,7 @@ class Comment {
 	
 	String comment;
 	User user;
+	Date creationTime;
 
 	static belongsTo=[article:Article];
 	
