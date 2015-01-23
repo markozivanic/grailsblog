@@ -8,7 +8,7 @@
   By ${article.user.name}<br/>
   <pre>${article.content}</pre>
   
-  <form action="/grailsblog/comment/newComment">
+  <form action="/grailsblog/comment/newComment" class="topbutton">
     <input type="hidden" name="articleId" value="${article.id}"/>
     <input type="submit" value="Add a comment"/>
   </form>

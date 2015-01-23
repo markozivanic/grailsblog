@@ -41,3 +41,20 @@
   background-color:#404040;
   color:#a0a0a0;
 }
+
+textarea {
+  width:100%;
+}
+
+input.title-entry {
+  width:80%;
+}
+
+ul.bare {
+  list-style-type:none;
+}
+
+.topbutton {
+  margin-top:20px;
+  margin-bottom:20px;
+}

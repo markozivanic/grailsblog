@@ -6,9 +6,8 @@
 	<body>
 	  <g:form action="save">
 	    <label for="title">Title</label>
-	    <input type="text" name="title"/>
+	    <input class="title-entry" type="text" name="title"/>
 	    <br/>
-	    <label for="content">Content</label>
 	    <textarea name="content"></textarea>
 	    <br/>
 	    <input type="submit" value="Create"/>

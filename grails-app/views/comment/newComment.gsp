@@ -11,7 +11,6 @@
   <form action="/grailsblog/comment/save" method="POST">
     <input type="hidden" name="userId" value="${user.id}"/>
     <input type="hidden" name="articleId" value="${article.id}"/>
-    <label for="comment">Comment</label>
     <textarea name="comment"></textarea>
     <br/>
     <input type="submit" value="Add Comment"/>

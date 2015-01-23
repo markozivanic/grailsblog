@@ -36,7 +36,17 @@ class ArticleController {
     }
     
     def read() {
-      Article article=Article.get(params.id);
+      Article article;
+      try {
+        article=Article.get(params.id);
+        if (!article) throw new Exception();
+      } catch (Exception e) {
+        article=Article.lookupAlternateId(params.id);
+      }
+      if (!article) {
+        redirect(controller:"article",action:"index");
+        return;
+      }
       request.article=article;
       if (session.user&&(session.user.id==article.user.id)) {
         flash.article=article;
