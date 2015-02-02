@@ -36,6 +36,9 @@ class ArticleController {
     }
     
     def read() {
+		session.redirectController="Article";
+		session.redirectAction="read";
+		session.redirectParams=[id:params.id];
       Article article;
       try {
         article=Article.get(params.id);
