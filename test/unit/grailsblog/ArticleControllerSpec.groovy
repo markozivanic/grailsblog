@@ -15,6 +15,8 @@ class ArticleControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+	@Test
+    void testSomething() {
+		assertTrue(false);
     }
 }
