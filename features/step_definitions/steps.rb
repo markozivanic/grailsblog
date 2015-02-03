@@ -1,5 +1,6 @@
 require 'cucumber'
 require 'page-object'
+require 'rspec'
 
 include PageObject::PageFactory
 
@@ -15,7 +16,7 @@ end
 
 Then(/^I should see comments left by other readers$/) do
   on_page ArticlePage do |page|
-    page.commentText.should be "I'm not sure I understand this."
+    expect(page.text).to match "I'm not sure I understand this."
   end
 end
 

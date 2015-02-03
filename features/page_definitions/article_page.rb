@@ -5,6 +5,6 @@ class ArticlePage
 
   page_url ""
 
-  element(:commentText,:text=>"I'm not sure I understand this.")
+  element(:commentText,:text=>'I\'m not sure I understand this.')
   
 end
