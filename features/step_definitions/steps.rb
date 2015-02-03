@@ -1,5 +1,7 @@
 require 'cucumber'
 require 'page-object'
+require 'rspec'
+require 'date'
 
 include PageObject::PageFactory
 
@@ -15,20 +17,36 @@ end
 
 Then(/^I should see comments left by other readers$/) do
   on_page ArticlePage do |page|
-    page.commentText.should be "I'm not sure I understand this."
+    expect(page.text).to match "I'm not sure I understand this."
   end
 end
 
 Given(/^I am reading a blog post from my favorite blogger$/) do
-  pending # express the regexp above with the code you wish you had
+  visit_page ArticlePage do |page|
+    page.login
+  end
+  on_page LoginPage do |page|
+    page.username='andy'
+    page.password='password'
+    page.submit
+  end
 end
 
 When(/^I add my genius comment to the blog post$/) do
-  pending # express the regexp above with the code you wish you had
+  on_page ArticlePage do |page|
+    @generatedCommentText="This comment generated at #{DateTime.now().rfc2822}";
+    page.commentEntry=@generatedCommentText
+    page.submitComment
+  end
 end
 
 Then(/^my genius comment is at the top of the blog post comments$/) do
-  pending # express the regexp above with the code you wish you had
+  on_page ArticlePage do |page|
+    page.wait_until(10,"Stalled at AJAX comment submission") do
+      page.text.include? @generatedCommentText
+    end
+    expect(page.topmostComment).to eq(@generatedCommentText)
+  end
 end
 
 Given(/^I am logged in as a blogger$/) do
