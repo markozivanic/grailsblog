@@ -1,5 +1,7 @@
 package grailsblog
 
+import org.junit.Test;
+
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
@@ -7,14 +9,22 @@ import spock.lang.Specification
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(Article)
-class ArticleSpec extends Specification {
+class ArticleSpec extends GroovyTestCase {
 
-    def setup() {
+	Article article;
+	Date date = new Date();
+    void setUp() {
+		article = new Article(title:"Lion king", content:"Watching the lions", creationTime:date);
     }
 
     def cleanup() {
+		article.delete();
     }
 
-    void "test something"() {
+	@Test
+    void testNewArticle() {
+		assertEquals("Lion king", article.title);
+		assertEquals("Watching the lions", article.content);
+		assertEquals(date, article.creationTime);
     }
 }

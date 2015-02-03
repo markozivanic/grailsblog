@@ -7,17 +7,21 @@ import spock.lang.Specification
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(User)
-class UserSpec extends Specification {
+class UserSpec extends GroovyTestCase {
 
     User user;
 
-    def setup() {
-      user=new User();
+    void setUp() {
+      user=new User(name:"Marko", email:"markons91@hotmail.com", password:"password");
     }
 
-    def cleanup() {
+    void tearDown() {
+		user.delete();
     }
 
-    void "test required fields"() {
+    void testUser() {
+		assertEquals("Marko", user.name);
+		assertEquals("markons91@hotmail.com", user.email);
+		assertEquals("password", user.password);
     }
 }

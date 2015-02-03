@@ -7,22 +7,23 @@ import spock.lang.Specification
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(Comment)
-class CommentSpec extends Specification {
+class CommentSpec extends GroovyTestCase {
 	Comment comment;
+	Date date = new Date();
+	User marko;
 	
-    def setup() {
-	 comment = new Comment();
+    void setUp() {
+	marko = new User();
+	 comment = new Comment(comment:"This is comment", user:marko, creationTime:date);
     }
 
-    def cleanup() {
+    void tearDown() {
+		comment.delete();
     }
 
-    void "test something"() {
-		given:
-			comment.name = "I love this blog";
-		when:
-			comment.name = "I access this blog";
-		then:
-			comment.name.contains  "I see nice topics";
+    void testComment() {
+		assertEquals("This is comment", comment.comment);
+		assertEquals(marko, comment.user);
+		assertEquals(date, comment.creationTime);
     }
 }
