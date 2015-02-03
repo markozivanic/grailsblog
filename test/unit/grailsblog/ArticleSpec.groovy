@@ -11,6 +11,7 @@ import spock.lang.Specification
 @TestFor(Article)
 class ArticleSpec extends GroovyTestCase {
 
+
 	Article article;
 	Date date = new Date();
     void setUp() {
@@ -26,5 +27,6 @@ class ArticleSpec extends GroovyTestCase {
 		assertEquals("Lion king", article.title);
 		assertEquals("Watching the lions", article.content);
 		assertEquals(date, article.creationTime);
+
     }
 }

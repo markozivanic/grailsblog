@@ -9,6 +9,7 @@ import spock.lang.Specification
 @TestFor(User)
 class UserSpec extends GroovyTestCase {
 
+
     User user;
 
     void setUp() {
@@ -23,5 +24,6 @@ class UserSpec extends GroovyTestCase {
 		assertEquals("Marko", user.name);
 		assertEquals("markons91@hotmail.com", user.email);
 		assertEquals("password", user.password);
+
     }
 }

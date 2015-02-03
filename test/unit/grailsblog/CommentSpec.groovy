@@ -8,6 +8,7 @@ import spock.lang.Specification
  */
 @TestFor(Comment)
 class CommentSpec extends GroovyTestCase {
+
 	Comment comment;
 	Date date = new Date();
 	User marko;
